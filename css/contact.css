@@ -1,0 +1,194 @@
+/* --- Contact Page Specific Styles --- */
+.contact {
+    /* The general 'section' margin-top will apply here */
+    background: #f8f8f8; /* A very light grey background for the contact section */
+    display: flex;
+    flex-direction: column; /* Changed to column to allow h1 to be on its own line at the top */
+    align-items: center; /* Center content horizontally */
+    min-height: calc(100vh - 7rem); /* Ensure it takes at least the viewport height minus header */
+    padding-top: 9rem; /* Add some top padding to separate heading from header */
+}
+
+/* Ensure the heading is centered */
+.contact .heading {
+    text-align: center; /* This is already set globally, but good to reconfirm */
+    margin-bottom: 2.5rem; /* Space below the heading */
+    font-size: 4rem; /* As per global heading style */
+    color: #10221b;
+    text-shadow: .1rem .1rem .2rem rgba(0,0,0,.1);
+}
+
+.contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px; /* Limit overall width for readability */
+    align-items: flex-start; /* Align form and map at the top */
+    justify-content: center; /* Center items if they don't fill the row */
+}
+
+.contact .map {
+    flex: 1 1 50rem; /* Allow map to grow/shrink, base 50rem */
+    height: 400px; /* Fixed height for the map */
+    border-radius: .8rem;
+    box-shadow: 0 .5rem 2rem rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensure map corners are rounded */
+    border: 1px solid #ddd;
+}
+
+.contact .map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(80%) saturate(120%); /* Subtle desaturation for map */
+}
+
+.contact .contact-form { /* Re-styled from .wrapper1 and .contact-form combined */
+    flex: 1 1 45rem; /* Allow form to grow/shrink, base 45rem */
+    background: #fff;
+    padding: 4rem;
+    border-radius: .8rem;
+    box-shadow: 0 .5rem 2rem rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Stack fields vertically */
+    gap: 1.5rem; /* Space between form elements */
+}
+
+.contact .contact-form h3 {
+    font-size: 3rem;
+    color: #10221b;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.contact .contact-form .input-box {
+    display: flex;
+    flex-wrap: wrap; /* Allow inputs to wrap in a row */
+    gap: 1.5rem;
+    /* Removed margin-bottom here, using gap for spacing between input rows */
+}
+
+.contact .contact-form .input-box input,
+.contact .contact-form textarea {
+    flex: 1 1 48%; /* Each input takes roughly half width, textarea full width */
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: #333;
+    background: #f0f0f0;
+    border-radius: .5rem;
+    border: .1rem solid #eee;
+    text-transform: none; /* Keep text-transform: none for input fields */
+}
+
+.contact .contact-form textarea {
+    width: 100%; /* Full width for textarea */
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 15rem; /* Minimum height for textarea */
+    max-height: 30rem; /* Maximum height for textarea */
+}
+
+.contact .contact-form .input-box input::placeholder,
+.contact .contact-form textarea::placeholder {
+    color: #777; /* Lighter placeholder text */
+}
+
+.contact .contact-form .btn {
+    align-self: center; /* Center the button within the form */
+    margin-top: 1rem;
+    /* Use existing .btn style for submission */
+}
+
+/* --- Media Queries --- */
+@media (max-width:1200px){
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding:3rem 2rem;
+    }
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .home .box{
+        padding: 2rem;
+        justify-content: center;
+        background-position: right !important;
+    }
+    .home .box .content{
+        text-align: center;
+    }
+    .home .box .content span{
+        font-size: 3rem;
+    }
+    .home .box .content h3{
+        font-size: 4rem;
+    }
+    .contact .row {
+        flex-direction: column; /* Stack map and form vertically on smaller screens */
+        align-items: center;
+    }
+    .contact .map,
+    .contact .contact-form {
+        flex: 1 1 auto; /* Allow them to take full width */
+        width: 90%; /* Max width for consistency */
+    }
+    .contact .contact-form .input-box input {
+        flex: 1 1 100%; /* Make inputs full width on smaller screens */
+    }
+}
+
+@media (max-width:768px){
+    .header #menu-btn{
+        display: inline-block; /* Show menu button on small screens */
+    }
+    .header .navbar{
+        position: fixed;
+        top:0; left:-110%;
+        background: white;
+        z-index:10000;
+        width: 35rem;
+        height: 100%;
+        display:flex;
+        flex-flow: column;
+        align-items: flex-start; /* Align menu items to start */
+        justify-content: center;
+        padding-left: 3rem; /* Add padding for readability */
+    }
+    .header .navbar.active{
+        left:0;
+        box-shadow: 0 0 0 100vw rgba(0,0,0,0.8);
+    }
+    .header .navbar a{
+        margin:1.5rem 0; /* More vertical space */
+        font-size: 2.5rem; /* Larger font size for mobile menu */
+    }
+    .header .navbar a i {
+        font-size: 2.2rem; /* Larger icons for mobile menu */
+    }
+    .header .navbar #nav-close{
+        display: block;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .heading {
+        font-size: 3rem;
+    }
+    .home .content h3{
+        font-size: 5rem; /* Adjust for smaller screens */
+    }
+    .contact .map {
+        height: 300px; /* Slightly smaller map on very small screens */
+    }
+    .contact .contact-form {
+        padding: 2.5rem; /* Reduce padding on very small screens */
+    }
+}

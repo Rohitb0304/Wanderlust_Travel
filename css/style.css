@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* Adjusted for fixed header height.
+       This value should be approximately the height of your header.
+       You might need to fine-tune this after checking the actual header height. */
+    scroll-padding-top: 9rem; /* Crucial for fixed header to prevent content overlap */
+}
+
+section{
+    padding:5rem 9%;
+}
+
+/* --- Buttons --- */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    border: 0.2rem solid #219150; /* Green border */
+    color: #219150; /* Green text */
+    cursor: pointer;
+    background: none;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    border-radius: .5rem; /* Slightly rounded corners for buttons */
+}
+.btn:hover {
+    background: #219150; /* Solid green on hover */
+    color: #fff; /* White text on hover */
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+.msg .btn1 { /* Specific style for contact form button */
+    margin-top: 1rem;
+    display: inline-block;
+    border: 0.2rem solid #219150;
+    color: #219150;
+    cursor: pointer;
+    background: none;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+}
+.msg .btn1:hover {
+    background: #219150;
+    color: #fff;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- Headings --- */
+.heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 4rem;
+    color: #10221b; /* Dark text for general headings */
+    text-shadow: .1rem .1rem .2rem rgba(0,0,0,.1); /* Subtle text shadow */
+}
+
+/* --- Header --- */
+.header{
+    position: fixed; /* Make the header fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    padding:2rem 9%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distributes items with space between them */
+    background: #fff; /* Ensure header is always white */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Always have shadow */
+}
+
+.header .logo{
+    font-size: 2.8rem; /* Slightly larger logo */
+    color:#10221b; /* Darker logo text */
+    font-weight: bolder;
+    margin-right: 2rem; /* Add some margin to the right of the logo */
+}
+
+.header .logo i {
+    color: #219150; /* Green for the logo icon */
+    margin-right: .5rem; /* Space between icon and text */
+}
+
+.header .navbar {
+    display: flex; /* Ensure navbar items are flexed */
+    align-items: center;
+    margin-right: auto; /* Pushes the navbar to the left, and icons to the right */
+}
+
+.header .navbar a{
+    margin: 0 1.5rem; /* Adjusted horizontal margin for navbar links */
+    font-size: 1.7rem;
+    color: #10221b;
+    display: flex; /* Make links flex containers */
+    align-items: center; /* Vertically align icon and text */
+}
+
+.header .navbar a i {
+    margin-right: .6rem; /* Space between icon and text in nav links */
+    color: #219150; /* Green for navbar icons */
+    font-size: 1.5rem; /* Slightly smaller icons for visual balance */
+}
+
+.header .navbar a:hover{
+    color: #219150; /* Green on hover */
+}
+
+/* Ensure icons turn green on hover too */
+.header .navbar a:hover i {
+    color: #219150;
+}
+
+.header .navbar #nav-close{
+    font-size: 5rem;
+    cursor: pointer;
+    color: #10221b;
+    display: none;
+    position: absolute; /* Needed for positioning in mobile menu */
+    top: 1rem;
+    right: 2rem;
+}
+
+.header .icons {
+    display: flex;
+    align-items: center;
+}
+
+.header .icons a,
+.header .icons div{
+    font-size: 2.5rem;
+    margin-left: 2rem; /* Consistent spacing between icons */
+    cursor:pointer;
+    color:#10221b; /* Dark icons */
+}
+
+.header .icons a:hover,
+.header .icons div:hover{
+    color: #219150; /* Green on hover */
+}
+
+/* Media query adjustments for mobile navigation */
+@media (max-width:768px){
+    .header .navbar{
+        position: fixed;
+        top:0;
+        left:-110%; /* Hidden by default */
+        background: #fff;
+        z-index:10000;
+        width: 35rem;
+        height: 100%;
+        display:flex;
+        flex-flow: column;
+        align-items: flex-start; /* Align menu items to start */
+        justify-content: center;
+        padding-left: 3rem; /* Add padding for readability */
+    }
+    .header .navbar.active{
+        left:0;
+        box-shadow: 0 0 0 100vw rgba(0,0,0,0.8); /* Overlay for background */
+    }
+    .header .navbar a{
+        margin:1.5rem 0; /* More vertical space */
+        font-size: 2.5rem; /* Larger font size for mobile menu */
+    }
+    .header .navbar a i {
+        font-size: 2.2rem; /* Larger icons for mobile menu */
+    }
+    .header #menu-btn{
+        display: inline-block; /* Show menu button on small screens */
+    }
+}
+
+
+/* --- Icons --- */
+i{
+    color:#219150; /* Consistent green for icons */
+}
+
+.header .navbar a{
+    margin-left: 2rem;
+    font-size: 1.7rem;
+    color: #10221b; /* Dark text for navbar links */
+
+}
+.header .navbar a:hover{
+    color: #219150; /* Green on hover */
+}
+.header .navbar #nav-close{
+    font-size: 5rem;
+    cursor: pointer;
+    color: #10221b;
+    display: none;
+}
+.header .icons a, .header .icons div{
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    cursor:pointer;
+    color:#10221b; /* Dark icons */
+}
+
+.header .icons a:hover, .header .icons div:hover{
+    color: #219150; /* Green on hover */
+}
+.header #menu-btn{
+    display: none;
+}
+
+.search-form{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    background:rgba(0,0,0,0.9); /* Slightly darker overlay for search */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index:10000;
+    transform: translateY(-110%);
+    }
+
+.search-form.active{
+    transform: translateY(0%);
+}
+
+#close-search{
+    position: absolute;
+    top:1.5rem;
+    right:2.5rem;
+    cursor:pointer;
+    color:#fff;
+    font-size:5rem;
+
+}
+#close-search:hover{
+    color:#219150; /* Green on hover */
+
+}
+form{
+    width:70rem;
+    margin: 0 2rem;
+    padding-bottom: 2rem;
+    border-bottom: .2rem solid #fff; /* White border for search input */
+    display:flex;
+    align-items: center;
+}
+form input{
+    width:100%;
+    font-size: 2rem;
+    color:#fff;
+    text-transform: none;
+    background: none;
+    padding-right: 2rem;
+}
+
+form input::placeholder{
+    color:#ccc; /* Lighter placeholder text */
+
+}
+
+form label{
+    font-size: 3rem;
+    cursor:pointer;
+    color:#fff;
+
+}
+form label:hover{
+    color:#219150; /* Green on hover */
+}
+
+/* --- Home Section --- */
+.home{
+    padding:0;
+    /* Removed margin-top here as scroll-padding-top on html handles the spacing for fixed header */
+}
+
+.home .box{
+    min-height: calc(100vh - 9rem); /* Adjusted min-height to account for the fixed header */
+    display:flex;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    justify-content: flex-end;
+    padding: 2rem 9%;
+
+}
+
+.home .content{
+    width:50rem;
+    background: rgba(0,0,0,0.5); /* Semi-transparent background for content */
+    padding: 3rem;
+    border-radius: 1rem;
+}
+.home .content span{
+    font-size: 4rem;
+    color:#fff;
+}
+.home .content h3{
+    font-size: 6rem;
+    color:#219150; /* Green heading */
+    padding-top: .5rem;
+    text-transform: uppercase;
+}
+.home .content p{
+    line-height: 2;
+    color:#eee; /* Lighter text for description */
+    font-size: 2.5rem;
+    font-style: italic;
+    padding:1rem 0;
+}
+
+/* --- Category (Adventure) Section --- */
+.category .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+    gap: 2rem; /* Increased gap */
+}
+
+.category .box-container .box {
+    text-align: center;
+    padding: 2.5rem 1.5rem; /* More padding */
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1); /* Soft shadow for cards */
+    transition: transform .3s ease-in-out;
+}
+.category .box-container .box:hover {
+    transform: translateY(-.5rem); /* Lift effect on hover */
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+}
+.category .box-container .box img {
+    height: 18rem; /* Slightly smaller image */
+    width: 18rem;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+    border: .5rem solid #eee; /* Light border around image */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+.category .box-container .box h3 {
+    font-size: 2.2rem; /* Slightly larger heading */
+    color: #219150;
+    margin-bottom: 1rem;
+}
+
+.category .box-container .box p {
+    font-size: 1.5rem;
+    color: #444; /* Darker text for readability */
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+/* --- Packages Section --- */
+.packages {
+    background: #f0f0f0; /* Light grey background for packages section */
+}
+
+.packages .heading { /* Specific heading color for packages section */
+    color: #10221b;
+}
+
+.packages .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 2rem; /* Increased gap */
+  }
+
+  .packages .box-container .box {
+    text-align: center;
+    background: #fff; /* White background for package cards */
+    border: 0.1rem solid #ddd; /* Lighter border */
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+    overflow: hidden; /* Ensure image corners are clipped */
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+
+  .packages .box-container .box:hover {
+    transform: translateY(-.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    background: #e8f5e9; /* Light green tint on hover */
+  }
+
+  .packages .box-container .box:hover .content > * {
+    color: #10221b; /* Keep dark text, or adjust if background changes significantly */
+  }
+
+  .packages .box-container .box:hover .btn {
+    border-color: #219150; /* Green border on hover */
+    background: #219150; /* Solid green on hover */
+    color: #fff;
+  }
+
+  .packages .box-container .box:hover .btn:hover {
+    background: #1a773e; /* Darker green on button hover inside card */
+    color: #fff;
+  }
+
+  .packages .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+    padding-bottom: 0;
+    border-radius: .5rem .5rem 0 0; /* Only top corners rounded for image */
+  }
+
+  .packages .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem .5rem 0 0;
+    transition: transform .3s ease-in-out;
+  }
+  .packages .box-container .box:hover .image img {
+    transform: scale(1.05); /* Slight zoom effect on image hover */
+  }
+
+  .packages .box-container .box .content {
+    padding: 2rem;
+  }
+
+  .packages .box-container .box .content h3 {
+    font-size: 2.2rem; /* Slightly larger heading */
+    color: #10221b; /* Dark text */
+    margin-bottom: 1rem;
+  }
+
+  .packages .box-container .box .content p {
+    font-size: 1.5rem;
+    color: #555; /* Slightly lighter text for description */
+    padding: 1rem 0;
+    line-height: 2;
+  }
+
+  .packages .box-container .box .content .price {
+    font-size: 2.5rem; /* Larger price */
+    color: #219150; /* Green price */
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+/* --- Footer --- */
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/footer.jpg) no-repeat; /* Darker overlay */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 6rem; /* More padding top */
+  }
+
+  .footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .footer .box-container .box h3 {
+    font-size: 2.2rem; /* Slightly larger heading */
+    padding: 1.5rem 0;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
+    margin-bottom: 1rem;
+  }
+
+  .footer .box-container .box a {
+    display: block;
+    font-size: 1.5rem; /* Slightly larger links */
+    color: #ccc; /* Lighter color for links */
+    padding: 1rem 0;
+    transition: color .2s linear, padding-left .2s linear;
+  }
+
+  .footer .box-container .box a i {
+    color: #219150;
+    padding-right: .8rem; /* More space for icon */
+  }
+
+  .footer .box-container .box a:hover {
+    color: #219150;
+    padding-left: 1rem; /* Slide effect on hover */
+  }
+
+  .footer .box-container .box a:hover i {
+    padding-right: 1rem; /* Keep padding consistent for icon on hover */
+  }
+
+  .footer .credit {
+    text-align: center;
+    margin-top: 5rem; /* More margin top */
+    padding: 2.5rem 1rem; /* More padding */
+    font-size: 2rem;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Separator for credit */
+  }
+
+  .footer .credit span {
+    color: #219150;
+  }
+
+
+/* About Section Specific Styles */
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.about .row .image {
+    flex: 1 1 40rem;
+}
+
+.about .row .image img {
+    width: 100%;
+    border-radius: .5rem;
+    object-fit: cover;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+}
+
+.about .row .content {
+    flex: 1 1 50rem;
+}
+
+.about .row .content h3 {
+    font-size: 3.5rem;
+    color: #10221b;
+    margin-bottom: 1.5rem;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #444;
+    line-height: 2;
+    margin-bottom: 2rem;
+}
+
+
+/* --- Media Queries --- */
+@media (max-width:1200px){
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding:3rem 2rem;
+    }
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+        scroll-padding-top: 7rem; /* Adjust for smaller screens if header height changes */
+    }
+    .home .box{
+        padding: 2rem;
+        justify-content: center;
+        background-position: right !important;
+    }
+    .home .box .content{
+        text-align: center;
+
+    }
+    .home .box .content span{
+        font-size: 3rem;
+    }
+    .home .box .content h3{
+        font-size: 4rem;
+    }
+}
+@media (max-width:768px){
+    .header #menu-btn{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: fixed;
+        top:0; left:-110%;
+        background: white;
+        z-index:10000;
+        width: 35rem;
+        height: 100%;
+
+        display:flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .header .navbar.active{
+        left:0;
+        box-shadow: 0 0 0 100vw rgba(0,0,0,0.8);
+    }
+    .header .navbar a{
+        margin:1rem 0;
+        font-size: 3rem;
+    }
+    .header .navbar #nav-close{
+        display: block;
+        position: absolute;
+        top:1rem; right:2rem;
+    }
+    .contact-form{
+      flex-direction: column;
+    }
+    .msg textarea{
+      height: 80px;
+    }
+    .input-fields,
+    .msg{
+      width: 100%;
+      margin-right: 0; /* Remove margin-right on small screens */
+    }
+    html{
+        scroll-padding-top: 6rem; /* Further adjust for very small screens */
+    }
+  }
+
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .heading {
+        font-size: 3rem;
+      }
+    .home .content h3{
+        font-size: 5rem; /* Adjust for smaller screens */
+    }
+}
